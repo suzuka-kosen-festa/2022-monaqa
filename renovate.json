@@ -1,0 +1,14 @@
+{
+  "extends": ["config:base", ":timezone(Asia/Tokyo)"],
+  "labels": ["dependencies"],
+  "schedule": ["after 10pm and before 5am every weekend"],
+  "dependencyDashboard": true,
+  "automerge": true,
+  "packageRules": [
+    {
+      "matchDepTypes": ["devDependencies"],
+      "groupName": "devDependencies",
+      "rangeStrategy": "update-lockfile"
+    }
+  ]
+}
