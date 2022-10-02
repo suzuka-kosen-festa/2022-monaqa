@@ -1,9 +1,13 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
+const root = 'src'
 export default defineConfig({
-  root: './src',
+  root: root,
+  publicDir: 'public',
+  server: {
+    port: 3000,
+  },
   optimizeDeps: {
     esbuildOptions: {
       target: 'es2020',
