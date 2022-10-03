@@ -1,5 +1,4 @@
 import React from 'react'
-import tw from 'twin.macro'
 import { Sample } from './components/Sample'
 
 const App = () => (
