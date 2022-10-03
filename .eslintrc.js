@@ -4,17 +4,21 @@ module.exports = {
     es2021: true,
   },
   extends: [
+    'airbnb',
+    'airbnb/hooks',
+    'airbnb-typescript',
     'eslint:recommended',
-    'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'prettier',
   ],
-  overrides: [],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
+    project: './tsconfig.json',
   },
-  plugins: ['react', '@typescript-eslint'],
+  plugins: ['@typescript-eslint'],
   rules: {
     'no-console': ['warn', { allow: ['warn', 'info', 'error'] }], // console.logが残っていればwarn
     'prefer-arrow-callback': 'error', // arrow functionを許可
@@ -29,6 +33,7 @@ module.exports = {
       'error',
       { varsIgnorePattern: '^_', argsIgnorePattern: '^_' },
     ], // 未使用変数はエラー
+    'import/prefer-default-export': 'off',
   },
   overrides: [
     // 一部ルールを除外する
@@ -40,6 +45,10 @@ module.exports = {
       files: ['**/*.tsx'], // componentの戻り値の型定義の記述は必須にしない
       rules: {
         '@typescript-eslint/explicit-module-boundary-types': 'off',
+        'react/function-component-definition': [
+          2,
+          { namedComponents: 'arrow-function' },
+        ],
       },
     },
   ],
