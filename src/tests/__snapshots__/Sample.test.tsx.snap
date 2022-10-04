@@ -1,0 +1,11 @@
+// Vitest Snapshot v1
+
+exports[`(components) Sample > take snap shot 1`] = `
+<div>
+  <div
+    class="css-v37t0v"
+  >
+    HelloWorld
+  </div>
+</div>
+`;
