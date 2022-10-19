@@ -10,7 +10,7 @@ interface ListInterface {
   buttonText2: string
 }
 
-const DataTable = tw.ul`text-center w-full md:w-1/2 `
+const DataTable = tw.ul`text-center w-full lg:w-1/2 `
 const ListItem = tw.li`flex items-center justify-between border-2 mb-1  p-4 border-gray-400`
 
 const List: FC<ListInterface> = ({ data, buttonText1, buttonText2 }) => (
