@@ -1,0 +1,12 @@
+// Vitest Snapshot v1
+
+exports[`(components/common) Textfield > take snap shot 1`] = `
+<div>
+  <input
+    class="css-1f8go5f"
+    name="search"
+    type="search"
+    value=""
+  />
+</div>
+`;
