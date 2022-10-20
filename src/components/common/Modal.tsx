@@ -24,6 +24,7 @@ const Modal: FC<ModalInterface> = ({
 }) => {
   const [showModal, setShowModal] = useState(false)
   /* Todo: create portalやる const root = document.getElementById('modal') */
+  /* Todo: Buttonの処理を書き換える */
   return (
     <>
       <Button buttonKey="accept" onClick={() => setShowModal(true)}>
