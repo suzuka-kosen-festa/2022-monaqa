@@ -14,8 +14,10 @@ exports[`(components/pages) Search > take snap shot 1`] = `
         フルネーム：
       </label>
       <input
-        class="css-1f8go5f"
+        class="css-12hiyjf"
+        maxlength="20"
         name="search"
+        required=""
         type="search"
         value=""
       />
