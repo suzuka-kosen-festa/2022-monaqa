@@ -1,6 +1,10 @@
 node_modules
 .DS_Store
 .vscode
+.env
 dist
 dist-ssr
 *.local
+logs
+*.log
+

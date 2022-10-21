@@ -19,7 +19,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "prepare": "husky install",
-    "chromatic": "npx chromatic --project-token=46ba54cfb050"
+    "chromatic": "chromatic"
   },
   "dependencies": {
     "@emotion/react": "11.10.4",
