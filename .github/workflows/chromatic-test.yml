@@ -1,0 +1,31 @@
+name: Chromatic test
+
+on:
+  pull_request:
+    branches:
+      - dev
+    paths:
+      - src/components/**
+      - src/stories/**
+
+jobs:
+  run-chromatic-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: yarn
+      - name: Install Dependencies
+        run: yarn install --immutable
+      - name: Build Storybook
+        run: yarn run build-storybook
+  run-chromatic-test-check:
+    if: ${{ ! failure() }}
+    needs: run-chromatic-test
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Chromatic test is successfully executed."
