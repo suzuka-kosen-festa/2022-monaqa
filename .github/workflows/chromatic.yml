@@ -30,8 +30,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-        env:
-          STORYBOOK_GOOGLE_MAP_API_KEY: ${{ secrets.STORYBOOK_GOOGLE_MAP_API_KEY }}
   run-chromatic-deployment-check:
     if: ${{ ! failure() }}
     needs: run-chromatic-deployment
