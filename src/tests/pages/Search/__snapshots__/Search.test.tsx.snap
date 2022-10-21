@@ -15,7 +15,7 @@ exports[`(components/pages) Search > take snap shot 1`] = `
       </label>
       <input
         class="css-12hiyjf"
-        maxlength="20"
+        maxlength="15"
         name="search"
         required=""
         type="search"
