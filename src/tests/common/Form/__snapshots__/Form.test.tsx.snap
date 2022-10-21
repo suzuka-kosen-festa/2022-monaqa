@@ -1,0 +1,32 @@
+// Vitest Snapshot v1
+
+exports[`(components/common) Form > take snap shot 1`] = `
+<div>
+  <div
+    class="css-1e3hdvz"
+  >
+    <label
+      class="css-pkyrm3"
+    >
+      This is test
+    </label>
+    <input
+      class="css-12hiyjf"
+      maxlength="15"
+      name="search"
+      required=""
+      type="search"
+      value=""
+    />
+    <button
+      class="css-177jtcm-Button"
+    >
+      <p
+        class="css-7rlnkq-Button"
+      >
+        This is test
+      </p>
+    </button>
+  </div>
+</div>
+`;
