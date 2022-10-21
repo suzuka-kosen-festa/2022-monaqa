@@ -17,7 +17,7 @@ const Damy = () => null
 const Form: FC<FormInterface> = ({ children, buttonText }) => (
   <FormBox>
     <Label>{children}</Label>
-    <Textfield type="search" name="search" maxLength={15} />
+    <Textfield type="search" name="search" maxLength={20} />
     <Button buttonKey="accept" onClick={() => Damy}>
       {`${buttonText}`}
     </Button>
