@@ -26,7 +26,6 @@ const Modal: FC<ModalInterface> = ({
 }) => {
   const [showModal, setShowModal] = useState(false)
   /* Todo: create portalやる const root = document.getElementById('modal') */
-  /* Todo: Buttonの処理を書き換える */
   return (
     <>
       <Button buttonKey="accept" onClick={() => setShowModal(true)}>
@@ -40,7 +39,7 @@ const Modal: FC<ModalInterface> = ({
               <Button buttonKey="reject" onClick={() => setShowModal(false)}>
                 {`${buttonText1}`}
               </Button>
-              <Button buttonKey="accept" onClick={() => onClick()}>
+              <Button buttonKey="accept" onClick={onClick}>
                 {`${buttonText2}`}
               </Button>
             </DiaLog>
