@@ -33,6 +33,7 @@ exports[`(components/pages) Search > take snap shot 1`] = `
         class="css-pkyrm3"
       />
     </div>
+     
     <ul
       class="css-1c39pzn"
     >
@@ -51,6 +52,13 @@ exports[`(components/pages) Search > take snap shot 1`] = `
         </button>
       </li>
     </ul>
+     
+    <div
+      class="Toastify"
+    />
+    <div
+      class="Toastify"
+    />
   </div>
 </div>
 `;
