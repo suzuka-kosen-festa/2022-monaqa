@@ -1,0 +1,9 @@
+// Vitest Snapshot v1
+
+exports[`(components/common) Loading > take snap shot 1`] = `
+<div>
+  <div
+    class="css-1bciofo"
+  />
+</div>
+`;

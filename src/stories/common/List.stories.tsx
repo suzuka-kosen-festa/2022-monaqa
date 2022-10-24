@@ -5,7 +5,8 @@ type T = typeof List
 type Story = ComponentStoryObj<T>
 
 const data = {
-  ListData: ['Test1', 'Test2', 'Test3', 'Test4', 'Test5'],
+  ListData: [],
+  ListData1: ['Test1', 'Test2', 'Test3', 'Test4', 'Test5'],
   buttonText1: 'Test',
   buttonText2: 'Test',
 }
@@ -13,6 +14,7 @@ const data = {
 export default {
   args: {
     data: data.ListData,
+    data1: data.ListData1,
     buttonText1: data.buttonText1,
     buttonText2: data.buttonText2,
   },

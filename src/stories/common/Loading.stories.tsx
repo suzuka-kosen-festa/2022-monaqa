@@ -1,11 +1,11 @@
 import type { ComponentStoryObj, ComponentMeta } from '@storybook/react'
-import { Sample } from '../components/Sample'
+import { Loading } from '../../components/common/Loading'
 
-type T = typeof Sample
+type T = typeof Loading
 type Story = ComponentStoryObj<T>
 
 export default {
-  component: Sample,
+  component: Loading,
 } as ComponentMeta<T>
 
 export const Default: Story = {}

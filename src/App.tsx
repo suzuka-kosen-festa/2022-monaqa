@@ -1,10 +1,5 @@
 import React from 'react'
-import { Sample } from './components/Sample'
 
-const App = () => (
-  <div>
-    <Sample />
-  </div>
-)
+const App = () => <div>hoge</div>
 
 export default App
