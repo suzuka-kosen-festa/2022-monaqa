@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import type { FC } from 'react'
 import tw from 'twin.macro'
 
@@ -12,18 +12,26 @@ import { Text } from '../common/Text'
 const QRContainer = tw.div`flex flex-col justify-center items-center`
 
 const QR: FC = () => {
+  const [previousValue, setPeviosValue] = useState('')
+
   const timeStamp = (uuid: string): void => {
-    apiClient
-      .get(`/admin/check/${uuid}`)
-      .then(res => {
-        if (res.data != null)
-          toast.success(`${res.data.name}さんの入場を記録しました`)
-        else toast.error('error')
-      })
-      .catch(err => {
-        toast.error(err.message)
-      })
+    if (previousValue !== uuid) {
+      apiClient
+        .get(`/admin/check/${uuid}`)
+        .then(res => {
+          if (res.data != null) {
+            toast.success(`${res.data.name}さんの入場を記録しました`)
+            setPeviosValue(uuid)
+          } else {
+            toast.error('error')
+          }
+        })
+        .catch(err => {
+          toast.error(err.message)
+        })
+    }
   }
+
   return (
     <QRContainer>
       <QRCodeReader
@@ -31,9 +39,7 @@ const QR: FC = () => {
           timeStamp(result.getText())
         }}
       />
-
       <ToastContainer position="bottom-center" />
-
       <Text>QRコードをかざしてください</Text>
     </QRContainer>
   )
