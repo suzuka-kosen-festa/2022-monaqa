@@ -10,6 +10,7 @@ interface ModalInterface {
   name: string
   buttonText1: string
   buttonText2: string
+  onClick: () => void
 }
 
 const ModalArea = tw.div`fixed inset-0 z-10 overflow-y-auto bg-gray-700 bg-opacity-70 `
@@ -21,6 +22,7 @@ const Modal: FC<ModalInterface> = ({
   name,
   buttonText1,
   buttonText2,
+  onClick,
 }) => {
   const [showModal, setShowModal] = useState(false)
   /* Todo: create portalやる const root = document.getElementById('modal') */
@@ -38,7 +40,7 @@ const Modal: FC<ModalInterface> = ({
               <Button buttonKey="reject" onClick={() => setShowModal(false)}>
                 {`${buttonText1}`}
               </Button>
-              <Button buttonKey="accept" onClick={() => setShowModal(false)}>
+              <Button buttonKey="accept" onClick={() => onClick()}>
                 {`${buttonText2}`}
               </Button>
             </DiaLog>

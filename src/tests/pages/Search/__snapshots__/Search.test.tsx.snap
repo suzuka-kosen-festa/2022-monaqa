@@ -11,7 +11,7 @@ exports[`(components/pages) Search > take snap shot 1`] = `
       <label
         class="css-pkyrm3"
       >
-        フルネーム：
+        フルネーム:
       </label>
       <input
         class="css-12hiyjf"
@@ -19,7 +19,6 @@ exports[`(components/pages) Search > take snap shot 1`] = `
         name="search"
         required=""
         type="search"
-        value=""
       />
       <button
         class="css-177jtcm-Button"
@@ -30,6 +29,9 @@ exports[`(components/pages) Search > take snap shot 1`] = `
           検索する
         </p>
       </button>
+      <label
+        class="css-pkyrm3"
+      />
     </div>
     <ul
       class="css-1c39pzn"
@@ -37,83 +39,7 @@ exports[`(components/pages) Search > take snap shot 1`] = `
       <li
         class="css-1mb2k9r"
       >
-        <p
-          class="css-1n0cxvl"
-        >
-          こうせんたろう
-        </p>
-        <button
-          class="css-177jtcm-Button"
-        >
-          <p
-            class="css-7rlnkq-Button"
-          >
-            入場記録
-          </p>
-        </button>
-      </li>
-      <li
-        class="css-1mb2k9r"
-      >
-        <p
-          class="css-1n0cxvl"
-        >
-          こうせんはなこ
-        </p>
-        <button
-          class="css-177jtcm-Button"
-        >
-          <p
-            class="css-7rlnkq-Button"
-          >
-            入場記録
-          </p>
-        </button>
-      </li>
-      <li
-        class="css-1mb2k9r"
-      >
-        <p
-          class="css-1n0cxvl"
-        >
-          あおやまじろう
-        </p>
-        <button
-          class="css-177jtcm-Button"
-        >
-          <p
-            class="css-7rlnkq-Button"
-          >
-            入場記録
-          </p>
-        </button>
-      </li>
-      <li
-        class="css-1mb2k9r"
-      >
-        <p
-          class="css-1n0cxvl"
-        >
-          みのうらたろう
-        </p>
-        <button
-          class="css-177jtcm-Button"
-        >
-          <p
-            class="css-7rlnkq-Button"
-          >
-            入場記録
-          </p>
-        </button>
-      </li>
-      <li
-        class="css-1mb2k9r"
-      >
-        <p
-          class="css-1n0cxvl"
-        >
-          ほりえたろう
-        </p>
+        サンプル
         <button
           class="css-177jtcm-Button"
         >
