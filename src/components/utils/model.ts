@@ -41,6 +41,10 @@ export interface JhsResponse {
 }
 export interface GuestObject extends Object {
   guestId: string
+  sex: string
+  jobs: string
+  name: string
+  hostId: string
 }
 
 export interface StudentSuccessResponse {

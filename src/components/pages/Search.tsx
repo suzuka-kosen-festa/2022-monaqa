@@ -38,7 +38,7 @@ const Search: FC = () => {
         data1.unshift(items[i].Guest[j].name)
         data.unshift(items[i].Guest[j])
       }
-      data.shift()
+
       data1.pop()
       setItem(data1)
       setObj(data)
@@ -54,7 +54,6 @@ const Search: FC = () => {
         data1.unshift(items[i].Parents[j].name)
         data.unshift(items[i].Parents[j])
       }
-      data.shift()
       data1.pop()
       setItem(data1)
       setObj(data)
