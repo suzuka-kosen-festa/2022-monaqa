@@ -2,17 +2,14 @@
 
 exports[`(components/common) List > take snap shot 1`] = `
 <div>
+   
   <ul
     class="css-1c39pzn"
   >
     <li
       class="css-1mb2k9r"
     >
-      <p
-        class="css-1n0cxvl"
-      >
-        Test1
-      </p>
+      Test1
       <button
         class="css-177jtcm-Button"
       >
@@ -26,11 +23,7 @@ exports[`(components/common) List > take snap shot 1`] = `
     <li
       class="css-1mb2k9r"
     >
-      <p
-        class="css-1n0cxvl"
-      >
-        Test2
-      </p>
+      Test2
       <button
         class="css-177jtcm-Button"
       >
@@ -44,11 +37,7 @@ exports[`(components/common) List > take snap shot 1`] = `
     <li
       class="css-1mb2k9r"
     >
-      <p
-        class="css-1n0cxvl"
-      >
-        Test3
-      </p>
+      Test3
       <button
         class="css-177jtcm-Button"
       >
@@ -62,11 +51,7 @@ exports[`(components/common) List > take snap shot 1`] = `
     <li
       class="css-1mb2k9r"
     >
-      <p
-        class="css-1n0cxvl"
-      >
-        Test4
-      </p>
+      Test4
       <button
         class="css-177jtcm-Button"
       >
@@ -80,11 +65,7 @@ exports[`(components/common) List > take snap shot 1`] = `
     <li
       class="css-1mb2k9r"
     >
-      <p
-        class="css-1n0cxvl"
-      >
-        Test5
-      </p>
+      Test5
       <button
         class="css-177jtcm-Button"
       >
@@ -96,5 +77,9 @@ exports[`(components/common) List > take snap shot 1`] = `
       </button>
     </li>
   </ul>
+   
+  <div
+    class="Toastify"
+  />
 </div>
 `;

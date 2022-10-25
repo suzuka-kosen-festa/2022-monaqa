@@ -5,9 +5,7 @@ exports[`(components/common) Textfield > take snap shot 1`] = `
   <input
     class="css-12hiyjf"
     name="search"
-    required=""
     type="search"
-    value=""
   />
 </div>
 `;
