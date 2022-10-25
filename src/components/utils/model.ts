@@ -68,7 +68,9 @@ export interface FaiedResponse {
   status: 'FAILED'
   message: string
 }
-
+export interface CheckResponse {
+  name: string
+}
 export interface LoginResponse {
   access_token: string
 }
