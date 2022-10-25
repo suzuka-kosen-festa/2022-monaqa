@@ -3,11 +3,13 @@ import type { FC } from 'react'
 import tw from 'twin.macro'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import type { AxiosError } from 'axios'
 
 import { Text } from '../common/Text'
 import { Textfield } from '../common/Textfield'
 import { Button } from '../common/Button'
 import { firestApiClient } from '../utils/axios'
+import type { LoginResponse, FaiedResponse } from '../utils/model'
 
 const LoginContainer = tw.div`flex  flex-col items-center justify-center space-y-4 h-[calc(100vh)]`
 
@@ -17,7 +19,7 @@ const Login: FC = () => {
 
   const loginHandler = (pass: string) => {
     firestApiClient
-      .post('/auth', {
+      .post<LoginResponse>('/auth', {
         username: 'admin',
         password: pass,
       })
@@ -25,7 +27,7 @@ const Login: FC = () => {
         window.localStorage.setItem('access_token', res.data.access_token)
         setIslogin(true)
       })
-      .catch(err => {
+      .catch((err: AxiosError<FaiedResponse>) => {
         toast.error(err.message)
       })
   }
