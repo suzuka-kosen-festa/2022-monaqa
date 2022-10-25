@@ -1,0 +1,12 @@
+// Vitest Snapshot v1
+
+exports[`(components/common) Navigation > take snap shot 1`] = `
+<div>
+  <a
+    class="css-1oumg6"
+    href="#"
+  >
+    This is test
+  </a>
+</div>
+`;
