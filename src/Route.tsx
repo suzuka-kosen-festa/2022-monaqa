@@ -1,16 +1,18 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
+import { Switch, Route, Redirect } from 'wouter'
 import { Login } from './components/pages/Login'
 import { Search } from './components/pages/Search'
 import { QR } from './components/pages/QR'
 
 const Routers = () => (
-  <Router>
-    <Routes>
-      <Route path="/" element={<QR />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/search" element={<Search />} />
-    </Routes>
-  </Router>
+  <Switch>
+    <Route path="/" component={QR} />
+    <Route path="/login" component={Login} />
+    <Route path="/search" component={Search} />
+    <Route>
+      <Redirect to="/" />
+    </Route>
+  </Switch>
 )
 export default Routers
