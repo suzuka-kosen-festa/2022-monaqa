@@ -22,6 +22,7 @@ import type {
   ObSuccessResponse,
   FaiedResponse,
 } from '../utils/model'
+import { Navigation } from '../common/Navigation'
 
 const SearchScreen = tw.div`space-y-8 flex flex-col justify-center items-center my-[calc((100vh)/5)]`
 const FormBox = tw.div`flex flex-col space-y-2 justify-center  items-center w-full lg:(flex-row space-x-2 space-y-0 w-1/2)  `
@@ -121,6 +122,7 @@ const Search: FC = () => {
   }
   return localStorage.getItem('access_token') ? (
     <SearchScreen>
+      <Navigation href="/">QRコード読み取り画面へ戻る</Navigation>
       <FormBox>
         <Label>フルネーム:</Label>
         <Textfield

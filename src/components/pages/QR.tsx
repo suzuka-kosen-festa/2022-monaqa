@@ -10,6 +10,7 @@ import apiClient from '../utils/axios'
 import { QRCodeReader } from '../common/QRCodeReader'
 import { Text } from '../common/Text'
 import type { CheckResponse, FaiedResponse } from '../utils/model'
+import { Navigation } from '../common/Navigation'
 
 const QRContainer = tw.div`flex flex-col justify-center items-center`
 
@@ -43,6 +44,7 @@ const QR: FC = () => {
       />
       <ToastContainer position="bottom-center" />
       <Text>QRコードをかざしてください</Text>
+      <Navigation href="/search">手動入力画面へ</Navigation>
     </QRContainer>
   ) : (
     <Redirect to="/login" />
