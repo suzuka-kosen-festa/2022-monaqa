@@ -2,8 +2,10 @@ import React, { useRef, useState } from 'react'
 import type { FC } from 'react'
 import tw from 'twin.macro'
 import type { AxiosError } from 'axios'
+import { Redirect } from 'wouter'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+
 import apiClient from '../utils/axios'
 import { escapeHTML } from '../utils/API'
 
@@ -117,7 +119,7 @@ const Search: FC = () => {
       })
       .catch((err: AxiosError<FaiedResponse>) => toast.error(err.message))
   }
-  return (
+  return localStorage.getItem('access_token') ? (
     <SearchScreen>
       <FormBox>
         <Label>フルネーム:</Label>
@@ -139,6 +141,8 @@ const Search: FC = () => {
       <List data={obj} data1={item} buttonText1="いいえ" buttonText2="はい" />
       <ToastContainer position="bottom-center" />
     </SearchScreen>
+  ) : (
+    <Redirect to="/login" />
   )
 }
 

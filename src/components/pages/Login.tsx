@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useRef } from 'react'
 import type { FC } from 'react'
 import tw from 'twin.macro'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { Redirect } from 'wouter'
 import type { AxiosError } from 'axios'
 
 import { Text } from '../common/Text'
@@ -31,12 +32,9 @@ const Login: FC = () => {
         toast.error(err.message)
       })
   }
-  useEffect(() => {
-    if (isLogin) window.location.href = '/search'
-  }, [isLogin])
 
   return isLogin ? (
-    <Text>リダイレクトします</Text>
+    <Redirect to="/" />
   ) : (
     <LoginContainer>
       <Text>認証コードを入力してください</Text>

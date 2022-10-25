@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import type { FC } from 'react'
 import tw from 'twin.macro'
 import type { AxiosError } from 'axios'
+import { Redirect } from 'wouter'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -33,7 +34,7 @@ const QR: FC = () => {
     }
   }
 
-  return (
+  return localStorage.getItem('access_token') ? (
     <QRContainer>
       <QRCodeReader
         onReadQRCode={result => {
@@ -43,6 +44,8 @@ const QR: FC = () => {
       <ToastContainer position="bottom-center" />
       <Text>QRコードをかざしてください</Text>
     </QRContainer>
+  ) : (
+    <Redirect to="/login" />
   )
 }
 export { QR }
