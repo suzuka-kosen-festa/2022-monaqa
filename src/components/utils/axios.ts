@@ -9,6 +9,7 @@ const apiClient = axios.create({
     Authorization: `Bearer ${window.localStorage.getItem('access_token')}`,
   },
 })
+
 export const firestApiClient = axios.create({
   // APIのURI
   baseURL: import.meta.env.VITE_API_BASEURL,

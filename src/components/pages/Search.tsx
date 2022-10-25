@@ -4,7 +4,6 @@ import tw from 'twin.macro'
 import type { AxiosError } from 'axios'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-
 import apiClient from '../utils/axios'
 import { escapeHTML } from '../utils/API'
 
@@ -111,7 +110,6 @@ const Search: FC = () => {
       .then(res => {
         setObj([])
         setItem([''])
-        console.log(res.data.length)
         if (!res.data.length) {
           searchNamejhs(kana)
           return
