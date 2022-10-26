@@ -8,10 +8,10 @@ import { Text } from './Text'
 interface ModalInterface {
   name: string
   showFlag: boolean
-  setShowFlag: React.Dispatch<React.SetStateAction<boolean>>
   buttonText1: string
   buttonText2: string
-  onClick: () => void
+  onClick1: () => void
+  onClick2: () => void
 }
 
 const ModalArea = tw.div`fixed inset-0 z-10 overflow-y-auto bg-gray-700 bg-opacity-70 `
@@ -22,27 +22,25 @@ const Modal: FC<ModalInterface> = ({
   name,
   buttonText1,
   buttonText2,
-  onClick,
+  onClick1,
+  onClick2,
   showFlag,
-  setShowFlag,
-}) => {
-  const closeModal = () => setShowFlag(false)
-  return showFlag ? (
+}) =>
+  showFlag && name !== '' ? (
     <ModalArea>
       <ModalBox>
         <DiaLog>
           <Text>{name}さんの入場を記録しますか？</Text>
-          <Button buttonKey="reject" onClick={() => closeModal()}>
+          <Button buttonKey="reject" onClick={onClick1}>
             {`${buttonText1}`}
           </Button>
-          <Button buttonKey="accept" onClick={onClick}>
+          <Button buttonKey="accept" onClick={onClick2}>
             {`${buttonText2}`}
           </Button>
         </DiaLog>
       </ModalBox>
     </ModalArea>
   ) : null
-}
 /* Todo: create portalやる const root = document.getElementById('modal') */
 
 export { Modal }
