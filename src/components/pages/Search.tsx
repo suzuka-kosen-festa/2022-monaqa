@@ -50,6 +50,7 @@ const Search: FC = () => {
       setItem(data1)
       setObj(data)
     }
+    data1.pop()
     return obj
   }
   // jhsだけレスポンスが若干違うので
@@ -64,6 +65,7 @@ const Search: FC = () => {
       setItem(data1)
       setObj(data)
     }
+    data1.pop()
     return obj
   }
   // jhsだけレスポンスが若干違うので
@@ -77,6 +79,7 @@ const Search: FC = () => {
       setItem(data1)
       setObj(data)
     }
+    data1.pop()
     return obj
   }
   const sponsorfilterJSON = (items: SponsorResponse[]) => {
@@ -89,6 +92,7 @@ const Search: FC = () => {
       setItem(data1)
       setObj(data)
     }
+    data1.pop()
     return obj
   }
   const searchNameSponsor = (kana: string) => {
