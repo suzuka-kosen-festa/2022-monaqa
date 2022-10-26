@@ -47,6 +47,16 @@ export interface GuestObject extends Object {
   hostId: string
 }
 
+export interface ObObject extends Object {
+  obId: string
+  email: string
+  name: string
+}
+export interface SponsorObject extends Object {
+  sponsorId: string
+  email: string
+  name: string
+}
 export interface StudentSuccessResponse {
   status: 'SUCCESS'
   results: StudentResponse[]
