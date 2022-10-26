@@ -1,6 +1,7 @@
 import type { ComponentStoryObj, ComponentMeta } from '@storybook/react'
 import type { ComponentPropsWithoutRef } from 'react'
 import { Modal } from '../../components/common/Modal'
+import { dummy } from '../../components/utils/API'
 
 type T = typeof Modal
 type Story = ComponentStoryObj<T>
@@ -11,6 +12,7 @@ const args: ComponentPropsWithoutRef<T> = {
   name: 'test',
   buttonText1: 'test',
   buttonText2: 'test',
+  onClick: () => dummy(),
 }
 
 export default {

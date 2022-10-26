@@ -5,3 +5,8 @@ export const escapeHTML = (text: string): string =>
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#x27;')
+
+// ただのダミー
+export const dummy = (): void => {
+  console.log('dummy')
+}

@@ -3,12 +3,21 @@ import type { FC } from 'react'
 import tw from 'twin.macro'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-
+import type { AxiosError } from 'axios'
 import apiClient from '../utils/axios'
 import { Modal } from './Modal'
+import type { FaiedResponse } from '../utils/model'
+
+interface GuestObject extends Object {
+  guestId: string
+}
+
+interface SuccessResponse {
+  name: string
+}
 
 interface ListInterface {
-  data: object[]
+  data: GuestObject[]
   data1: ReadonlyArray<string>
   buttonText1: string
   buttonText2: string
@@ -19,13 +28,13 @@ const ListItem = tw.li`flex items-center justify-between border-2 mb-1  p-4 bord
 
 const timeStamp = (uuid: string): void => {
   apiClient
-    .get(`/admin/check/${uuid}`)
+    .get<SuccessResponse>(`/admin/check/${uuid}`)
     .then(res => {
       if (res.data != null)
         toast.success(`${res.data.name}さんの入場を記録しました`)
       else toast.error('error')
     })
-    .catch(err => {
+    .catch((err: AxiosError<FaiedResponse>) => {
       toast.error(err.message)
     })
 }
