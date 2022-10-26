@@ -2,7 +2,6 @@
 
 exports[`(components/common) List > take snap shot 1`] = `
 <div>
-   
   <ul
     class="css-1c39pzn"
   >
@@ -19,6 +18,7 @@ exports[`(components/common) List > take snap shot 1`] = `
           入場記録
         </p>
       </button>
+       
     </li>
     <li
       class="css-1mb2k9r"
@@ -33,6 +33,7 @@ exports[`(components/common) List > take snap shot 1`] = `
           入場記録
         </p>
       </button>
+       
     </li>
     <li
       class="css-1mb2k9r"
@@ -47,6 +48,7 @@ exports[`(components/common) List > take snap shot 1`] = `
           入場記録
         </p>
       </button>
+       
     </li>
     <li
       class="css-1mb2k9r"
@@ -61,6 +63,7 @@ exports[`(components/common) List > take snap shot 1`] = `
           入場記録
         </p>
       </button>
+       
     </li>
     <li
       class="css-1mb2k9r"
@@ -75,9 +78,9 @@ exports[`(components/common) List > take snap shot 1`] = `
           入場記録
         </p>
       </button>
+       
     </li>
   </ul>
-   
   <div
     class="Toastify"
   />
