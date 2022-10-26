@@ -53,7 +53,7 @@ const Search: FC = () => {
     data1.pop()
     return obj
   }
-  // jhsだけレスポンスが若干違うので
+
   const jhsfilterJSON = (items: JhsResponse[]) => {
     const data1: string[] = ['']
     const data: GuestObject[] = []
@@ -68,7 +68,6 @@ const Search: FC = () => {
     data1.pop()
     return obj
   }
-  // jhsだけレスポンスが若干違うので
   const obfilterJSON = (items: ObResponse[]) => {
     const data1: string[] = ['']
     const data: ObObject[] = []
@@ -82,6 +81,7 @@ const Search: FC = () => {
     data1.pop()
     return obj
   }
+
   const sponsorfilterJSON = (items: SponsorResponse[]) => {
     const data1: string[] = ['']
     const data: SponsorObject[] = []
@@ -95,6 +95,7 @@ const Search: FC = () => {
     data1.pop()
     return obj
   }
+
   const searchNameSponsor = (kana: string) => {
     apiClient
       .get<SponsorSuccessResponse>(`/sponsor/${escapeHTML(kana)}`)
@@ -109,6 +110,7 @@ const Search: FC = () => {
       })
       .catch((err: AxiosError<FaiedResponse>) => toast.error(err.message))
   }
+
   const searchNameOb = (kana: string) => {
     apiClient
       .get<ObSuccessResponse>(`/ob/${escapeHTML(kana)}`)
@@ -123,6 +125,7 @@ const Search: FC = () => {
       })
       .catch((err: AxiosError<FaiedResponse>) => toast.error(err.message))
   }
+
   const searchNamejhs = (kana: string) => {
     apiClient
       .get<JhsSuccessResponse>(`/jhs/${escapeHTML(kana)}`)
