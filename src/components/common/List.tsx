@@ -13,6 +13,7 @@ import type {
   ObObject,
   SponsorObject,
   GuestObject,
+  JhsObject,
 } from '../utils/model'
 
 interface SuccessResponse {
@@ -20,7 +21,7 @@ interface SuccessResponse {
 }
 
 interface ListInterface {
-  data: GuestObject[] | SponsorObject[] | ObObject[]
+  data: GuestObject[] | SponsorObject[] | ObObject[] | JhsObject[]
   data1: ReadonlyArray<string>
   buttonText1: string
   buttonText2: string
@@ -95,12 +96,19 @@ const List: FC<ListInterface> = ({ data, data1, buttonText1, buttonText2 }) => {
 
   const isGuest = (item: object): item is GuestObject =>
     !!(item as GuestObject)?.guestId
+
+  const isJhs = (item: object): item is JhsObject =>
+    !!(item as JhsObject)?.jhsId
+
   const isOb = (item: object): item is ObObject => !!(item as ObObject)?.obId
+
   const isSponsor = (item: object): item is SponsorObject =>
     !!(item as SponsorObject)?.sponsorId
 
   const timeStamp = (obj: object) => {
-    if (isGuest(obj)) {
+    if (isJhs(obj)) {
+      jhsTimeStamp(obj.jhsId)
+    } else if (isGuest(obj)) {
       guestTimeStamp(obj.guestId)
     } else if (isOb(obj)) {
       obTimeStamp(obj.obId)

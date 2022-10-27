@@ -26,9 +26,10 @@ export interface SponsorResponse {
 }
 
 export interface JhsResponse {
-  studentId: string
-  kana: string
+  jhsId: string
+  name: string
   email: string
+  age: string
   parents: [
     {
       guestId: string
@@ -39,12 +40,20 @@ export interface JhsResponse {
     },
   ]
 }
+
 export interface GuestObject extends Object {
   guestId: string
   sex: string
   jobs: string
   name: string
   hostId: string
+}
+
+export interface JhsObject extends Object {
+  age: string
+  email: string
+  jhsId: string
+  name: string
 }
 
 export interface ObObject extends Object {

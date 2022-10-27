@@ -25,6 +25,7 @@ import type {
   JhsSuccessResponse,
   ObSuccessResponse,
   FaiedResponse,
+  JhsObject,
 } from '../utils/model'
 import { Navigation } from '../common/Navigation'
 
@@ -35,9 +36,9 @@ const Label = tw.label`block text-gray-500 font-bold  text-lg text-right lg:(tex
 const Search: FC = () => {
   const inputRef = useRef<HTMLInputElement>(null!)
   const [item, setItem] = useState<string[]>(['サンプル'])
-  const [obj, setObj] = useState<GuestObject[] | ObObject[] | SponsorObject[]>(
-    [],
-  )
+  const [obj, setObj] = useState<
+    GuestObject[] | ObObject[] | SponsorObject[] | JhsObject[]
+  >([])
 
   const filterJSON = (items: StudentResponse[]) => {
     const data1: string[] = ['']
@@ -56,12 +57,10 @@ const Search: FC = () => {
 
   const jhsfilterJSON = (items: JhsResponse[]) => {
     const data1: string[] = ['']
-    const data: GuestObject[] = []
+    const data: JhsObject[] = []
     for (let i = 0; i < items.length; i += 1) {
-      for (let j = 0; j < items[i].parents.length; j += 1) {
-        data1.unshift(items[i].parents[j].name)
-        data.unshift(items[i].parents[j])
-      }
+      data1.unshift(items[i].name)
+      data.unshift(items[i])
       setItem(data1)
       setObj(data)
     }
