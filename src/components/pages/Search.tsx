@@ -14,13 +14,18 @@ import { List } from '../common/List'
 import { Button } from '../common/Button'
 import type {
   GuestObject,
+  ObObject,
+  SponsorObject,
   StudentResponse,
   JhsResponse,
+  ObResponse,
+  SponsorResponse,
   StudentSuccessResponse,
   SponsorSuccessResponse,
   JhsSuccessResponse,
   ObSuccessResponse,
   FaiedResponse,
+  JhsObject,
 } from '../utils/model'
 import { Navigation } from '../common/Navigation'
 
@@ -31,7 +36,9 @@ const Label = tw.label`block text-gray-500 font-bold  text-lg text-right lg:(tex
 const Search: FC = () => {
   const inputRef = useRef<HTMLInputElement>(null!)
   const [item, setItem] = useState<string[]>(['サンプル'])
-  const [obj, setObj] = useState<GuestObject[]>([])
+  const [obj, setObj] = useState<
+    GuestObject[] | ObObject[] | SponsorObject[] | JhsObject[]
+  >([])
 
   const filterJSON = (items: StudentResponse[]) => {
     const data1: string[] = ['']
@@ -41,28 +48,53 @@ const Search: FC = () => {
         data1.unshift(items[i].Guest[j].name)
         data.unshift(items[i].Guest[j])
       }
-
-      data1.pop()
       setItem(data1)
       setObj(data)
     }
+    data1.pop()
     return obj
   }
-  // jhsだけレスポンスが若干違うので
+
   const jhsfilterJSON = (items: JhsResponse[]) => {
     const data1: string[] = ['']
-    const data: GuestObject[] = []
+    const data: JhsObject[] = []
     for (let i = 0; i < items.length; i += 1) {
-      for (let j = 0; j < items[i].Parents.length; j += 1) {
-        data1.unshift(items[i].Parents[j].name)
-        data.unshift(items[i].Parents[j])
-      }
-      data1.pop()
+      data1.unshift(items[i].name)
+      data.unshift(items[i])
       setItem(data1)
       setObj(data)
     }
+    data1.pop()
     return obj
   }
+  const obfilterJSON = (items: ObResponse[]) => {
+    const data1: string[] = ['']
+    const data: ObObject[] = []
+    for (let i = 0; i < items.length; i += 1) {
+      data1.unshift(items[i].name)
+      data.unshift(items[i])
+
+      setItem(data1)
+      setObj(data)
+    }
+    data1.pop()
+    return obj
+  }
+
+  const sponsorfilterJSON = (items: SponsorResponse[]) => {
+    const data1: string[] = ['']
+    const data: SponsorObject[] = []
+    for (let i = 0; i < items.length; i += 1) {
+      data1.unshift(items[i].name)
+      data.unshift(items[i])
+
+      setItem(data1)
+      setObj(data)
+    }
+    data1.pop()
+    return obj
+  }
+
   const searchNameSponsor = (kana: string) => {
     apiClient
       .get<SponsorSuccessResponse>(`/sponsor/${escapeHTML(kana)}`)
@@ -73,10 +105,11 @@ const Search: FC = () => {
           toast.error('検索された名前は見つかりませんでした')
           return
         }
-        filterJSON(JSON.parse(JSON.stringify(res.data)))
+        sponsorfilterJSON(JSON.parse(JSON.stringify(res.data)))
       })
       .catch((err: AxiosError<FaiedResponse>) => toast.error(err.message))
   }
+
   const searchNameOb = (kana: string) => {
     apiClient
       .get<ObSuccessResponse>(`/ob/${escapeHTML(kana)}`)
@@ -87,10 +120,11 @@ const Search: FC = () => {
           searchNameSponsor(kana)
           return
         }
-        filterJSON(JSON.parse(JSON.stringify(res.data)))
+        obfilterJSON(JSON.parse(JSON.stringify(res.data)))
       })
       .catch((err: AxiosError<FaiedResponse>) => toast.error(err.message))
   }
+
   const searchNamejhs = (kana: string) => {
     apiClient
       .get<JhsSuccessResponse>(`/jhs/${escapeHTML(kana)}`)
@@ -107,18 +141,20 @@ const Search: FC = () => {
   }
 
   const searchName = (kana: string) => {
-    apiClient
-      .get<StudentSuccessResponse>(`/student/${escapeHTML(kana)}`)
-      .then(res => {
-        setObj([])
-        setItem([''])
-        if (!res.data.length) {
-          searchNamejhs(kana)
-          return
-        }
-        filterJSON(JSON.parse(JSON.stringify(res.data)))
-      })
-      .catch((err: AxiosError<FaiedResponse>) => toast.error(err.message))
+    if (kana !== '') {
+      apiClient
+        .get<StudentSuccessResponse>(`/student/${escapeHTML(kana)}`)
+        .then(res => {
+          setObj([])
+          setItem([''])
+          if (!res.data.length) {
+            searchNamejhs(kana)
+            return
+          }
+          filterJSON(JSON.parse(JSON.stringify(res.data)))
+        })
+        .catch((err: AxiosError<FaiedResponse>) => toast.error(err.message))
+    }
   }
   return localStorage.getItem('access_token') ? (
     <SearchScreen>

@@ -8,11 +8,12 @@ type Story = ComponentStoryObj<T>
 type Meta = ComponentMeta<T>
 
 const args: ComponentPropsWithoutRef<T> = {
-  children: 'This is test',
   name: 'test',
+  showFlag: false,
   buttonText1: 'test',
   buttonText2: 'test',
-  onClick: () => dummy(),
+  onClick1: () => dummy(),
+  onClick2: () => dummy(),
 }
 
 export default {

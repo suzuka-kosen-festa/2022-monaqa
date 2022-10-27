@@ -26,10 +26,11 @@ export interface SponsorResponse {
 }
 
 export interface JhsResponse {
-  studentId: string
-  kana: string
+  jhsId: string
+  name: string
   email: string
-  Parents: [
+  age: string
+  parents: [
     {
       guestId: string
       sex: string
@@ -39,6 +40,7 @@ export interface JhsResponse {
     },
   ]
 }
+
 export interface GuestObject extends Object {
   guestId: string
   sex: string
@@ -47,6 +49,23 @@ export interface GuestObject extends Object {
   hostId: string
 }
 
+export interface JhsObject extends Object {
+  age: string
+  email: string
+  jhsId: string
+  name: string
+}
+
+export interface ObObject extends Object {
+  obId: string
+  email: string
+  name: string
+}
+export interface SponsorObject extends Object {
+  sponsorId: string
+  email: string
+  name: string
+}
 export interface StudentSuccessResponse {
   status: 'SUCCESS'
   results: StudentResponse[]

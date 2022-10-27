@@ -1,15 +1,3 @@
 // Vitest Snapshot v1
 
-exports[`(components/common) Modal > take snap shot 1`] = `
-<div>
-  <button
-    class="css-177jtcm-Button"
-  >
-    <p
-      class="css-7rlnkq-Button"
-    >
-      This is test
-    </p>
-  </button>
-</div>
-`;
+exports[`(components/common) Modal > take snap shot 1`] = `<div />`;
