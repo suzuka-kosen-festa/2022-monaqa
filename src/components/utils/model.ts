@@ -29,7 +29,7 @@ export interface JhsResponse {
   studentId: string
   kana: string
   email: string
-  Parents: [
+  parents: [
     {
       guestId: string
       sex: string

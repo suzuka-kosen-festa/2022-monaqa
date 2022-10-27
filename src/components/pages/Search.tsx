@@ -58,9 +58,9 @@ const Search: FC = () => {
     const data1: string[] = ['']
     const data: GuestObject[] = []
     for (let i = 0; i < items.length; i += 1) {
-      for (let j = 0; j < items[i].Parents.length; j += 1) {
-        data1.unshift(items[i].Parents[j].name)
-        data.unshift(items[i].Parents[j])
+      for (let j = 0; j < items[i].parents.length; j += 1) {
+        data1.unshift(items[i].parents[j].name)
+        data.unshift(items[i].parents[j])
       }
       setItem(data1)
       setObj(data)
