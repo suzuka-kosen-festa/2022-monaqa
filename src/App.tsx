@@ -1,10 +1,9 @@
 import React from 'react'
-import tw from 'twin.macro'
-import { Sample } from './components/Sample'
+import Routers from './Route'
 
 const App = () => (
   <div>
-    <Sample />
+    <Routers />
   </div>
 )
 

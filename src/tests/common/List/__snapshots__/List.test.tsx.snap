@@ -1,0 +1,88 @@
+// Vitest Snapshot v1
+
+exports[`(components/common) List > take snap shot 1`] = `
+<div>
+  <ul
+    class="css-1c39pzn"
+  >
+    <li
+      class="css-1mb2k9r"
+    >
+      Test1
+      <button
+        class="css-177jtcm-Button"
+      >
+        <p
+          class="css-7rlnkq-Button"
+        >
+          入場記録
+        </p>
+      </button>
+       
+    </li>
+    <li
+      class="css-1mb2k9r"
+    >
+      Test2
+      <button
+        class="css-177jtcm-Button"
+      >
+        <p
+          class="css-7rlnkq-Button"
+        >
+          入場記録
+        </p>
+      </button>
+       
+    </li>
+    <li
+      class="css-1mb2k9r"
+    >
+      Test3
+      <button
+        class="css-177jtcm-Button"
+      >
+        <p
+          class="css-7rlnkq-Button"
+        >
+          入場記録
+        </p>
+      </button>
+       
+    </li>
+    <li
+      class="css-1mb2k9r"
+    >
+      Test4
+      <button
+        class="css-177jtcm-Button"
+      >
+        <p
+          class="css-7rlnkq-Button"
+        >
+          入場記録
+        </p>
+      </button>
+       
+    </li>
+    <li
+      class="css-1mb2k9r"
+    >
+      Test5
+      <button
+        class="css-177jtcm-Button"
+      >
+        <p
+          class="css-7rlnkq-Button"
+        >
+          入場記録
+        </p>
+      </button>
+       
+    </li>
+  </ul>
+  <div
+    class="Toastify"
+  />
+</div>
+`;
