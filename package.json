@@ -22,8 +22,8 @@
     "chromatic": "chromatic"
   },
   "dependencies": {
-    "@emotion/react": "11.10.4",
-    "@emotion/styled": "11.10.4",
+    "@emotion/react": "11.10.5",
+    "@emotion/styled": "11.10.5",
     "@zxing/browser": "^0.1.1",
     "@zxing/library": "^0.19.1",
     "axios": "^1.1.3",
